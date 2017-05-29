@@ -1,0 +1,67 @@
+/*
+ * Copyright (C) 2016 Chalmers
+ *
+ * This program is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License
+ * as published by the Free Software Foundation; either version 2
+ * of the License, or (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+ */
+
+message chalmersrevere.scaledcars.ExampleMessage [id = 801] {
+    uint32 field1   [id = 1];
+}
+
+message group5.CommunicationLinkMSG [id = 555 ] {
+    uint8 stateLaneFollower [id = 1];
+    uint8 stateOvertaker [id = 2];
+    uint8 stateParker [id = 3];
+    double ultraSonicFrontCenter [id = 4];
+    double ultraSonicFrontRight [id = 5];
+    double infraredSideFront [id = 6];
+    double infraredSideBack [id = 7];
+    double infraredBack [id = 8];
+    double wheelEncoder [id = 9];
+    uint8 drivingLane [id = 10];
+    uint8 unpark [id = 11];
+    uint16 distanceToRightLane [id = 12];
+    uint8 stop [id = 13];
+}
+
+message group5.LaneFollowerMSG [id = 556 ] {
+    uint8 stateLane [id = 1];
+    uint16 distanceToRightLane [id = 2];
+    uint8 danger [id = 3];
+}
+
+message group5.OvertakerMSG [id = 557 ] {
+    uint8 stateStop [id = 1];
+    uint8 stateLane [id = 2];
+    uint8 state [id = 3];
+}
+
+message group5.ParkerMSG [id = 558 ] {
+    uint8 stateStop [id = 1];
+}
+
+message group5.UdpMSG [id = 559 ] {
+    uint8 stateFunctionOvertaker [id = 1];
+    uint8 stateFunctionParker [id = 2];
+    uint8 stateStop [id = 3];
+     uint8 unpark [id = 4];
+
+}
+
+message group5.SensorsMSG [id = 560 ] {
+    uint64 travelledDistance [id = 1];
+    map<uint32, double> distances [id = 2];
+    uint64 travelledKm [id = 3];
+}
